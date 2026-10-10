@@ -15,7 +15,7 @@ spec:
           - app: chaiapp
             path: applicationsets/chai-app      # path in repo for this app
   # Template that will be used to generate individual Application CRs
-  template
+  template:
     metadata:
       # name template uses the element key 'app'
       name: '{{app}}-list'
