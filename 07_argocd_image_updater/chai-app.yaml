@@ -5,7 +5,7 @@ metadata:
   namespace: argocd             # Namespace where the Application resource will be created
   annotations:
     # Assign alias 'chai-app' to your image
-    argocd-image-updater.argoproj.io/image-list: chai-app=<your-dockerhub-username>/chai-devops # Maps the image alias 'chai-app' to your DockerHub image
+    argocd-image-updater.argoproj.io/image-list: chai-app=patilraviraj198/chai-devops # Maps the image alias 'chai-app' to your DockerHub image
 
     # Use git write-back
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-git-creds # Configures image updater to write changes back to Git using provided secret
@@ -16,7 +16,7 @@ metadata:
 spec:
   project: default              # Associates this Application with the 'default' ArgoCD project
   source:
-    repoURL: https://github.com/<your-github-username>/argocd-demos.git # Git repository containing the app manifests
+    repoURL: https://github.com/ravirajpatil198/argocd-demos.git # Git repository containing the app manifests
     targetRevision: main        # Branch or tag to track in the repository
     path: image_updater/chai-app # Path within the repo where the manifests(kustomization) are located
   destination:
